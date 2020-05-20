@@ -20,14 +20,15 @@ namespace Calculadora
 
             this.Medio = Medio;
         }
-        public void leer_historial()
+        public string leer_historial()
         {
             string histo = "";
             for(int i = 0; i < Historial.Count; i++)
             {
                 histo += Historial[i] + "\n";
             }
-            MessageBox.Show(histo);
+            return histo;
+            //MessageBox.Show(histo);
         }
         public void add_new_ans(string a)
         {
@@ -41,9 +42,9 @@ namespace Calculadora
 
         public string operar(string I,string D)
         {
-            int Izquierda = Int32.Parse(I);
-            int Derecha = Int32.Parse(D);
-            int resutl;
+            double Izquierda = double.Parse(I, System.Globalization.CultureInfo.InvariantCulture);  
+            double Derecha = double.Parse(D, System.Globalization.CultureInfo.InvariantCulture);
+            double resutl;
             if (Medio == "+")
             {
                 resutl = Izquierda + Derecha;

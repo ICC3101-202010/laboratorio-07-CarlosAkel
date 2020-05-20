@@ -218,7 +218,19 @@ namespace Calculadora
         private void button18_Click(object sender, EventArgs e)
         {
             Operaciones opi = new Operaciones("");
-            opi.leer_historial();
+            this.Histo.Text = opi.leer_historial();
+            this.Show_Historial.Visible = true;
+        }
+
+        private void Show_Historial_Paint(object sender, PaintEventArgs e)
+        {
+            
+            
+        }
+
+        private void Show_Historial_Click(object sender, EventArgs e)
+        {
+            this.Show_Historial.Visible = false;
         }
     }
 }

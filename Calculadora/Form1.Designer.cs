@@ -51,7 +51,11 @@
             this.Historial = new System.Windows.Forms.Button();
             this.Ans = new System.Windows.Forms.Button();
             this.Igual = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Show_Historial = new System.Windows.Forms.Panel();
+            this.Histo = new System.Windows.Forms.Label();
             this.ButtonsPanel.SuspendLayout();
+            this.Show_Historial.SuspendLayout();
             this.SuspendLayout();
             // 
             // UserInput
@@ -335,6 +339,26 @@
             this.Igual.UseVisualStyleBackColor = true;
             this.Igual.Click += new System.EventHandler(this.Igual_Click);
             // 
+            // Show_Historial
+            // 
+            this.Show_Historial.Controls.Add(this.Histo);
+            this.Show_Historial.Location = new System.Drawing.Point(15, 9);
+            this.Show_Historial.Name = "Show_Historial";
+            this.Show_Historial.Size = new System.Drawing.Size(355, 431);
+            this.Show_Historial.TabIndex = 3;
+            this.Show_Historial.Visible = false;
+            this.Show_Historial.Click += new System.EventHandler(this.Show_Historial_Click);
+            this.Show_Historial.Paint += new System.Windows.Forms.PaintEventHandler(this.Show_Historial_Paint);
+            // 
+            // Histo
+            // 
+            this.Histo.AutoSize = true;
+            this.Histo.Location = new System.Drawing.Point(27, 28);
+            this.Histo.Name = "Histo";
+            this.Histo.Size = new System.Drawing.Size(40, 17);
+            this.Histo.TabIndex = 0;
+            this.Histo.Text = "Histo";
+            // 
             // Form1
             // 
             this.AcceptButton = this.Igual;
@@ -342,6 +366,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.AC;
             this.ClientSize = new System.Drawing.Size(382, 450);
+            this.Controls.Add(this.Show_Historial);
             this.Controls.Add(this.ButtonsPanel);
             this.Controls.Add(this.Resultado_Calculadora);
             this.Controls.Add(this.UserInput);
@@ -349,6 +374,8 @@
             this.Name = "Form1";
             this.Text = "Calculadora";
             this.ButtonsPanel.ResumeLayout(false);
+            this.Show_Historial.ResumeLayout(false);
+            this.Show_Historial.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,6 +406,9 @@
         private System.Windows.Forms.Button Historial;
         private System.Windows.Forms.Button Ans;
         private System.Windows.Forms.Button Igual;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel Show_Historial;
+        private System.Windows.Forms.Label Histo;
     }
 }
 

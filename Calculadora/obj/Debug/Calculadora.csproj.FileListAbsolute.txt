@@ -8,3 +8,13 @@ C:\Users\carlo\Desktop\Carpeta del Anime\Calculadora\Calculadora\obj\Debug\Calcu
 C:\Users\carlo\Desktop\Carpeta del Anime\Calculadora\Calculadora\obj\Debug\Calculadora.exe
 C:\Users\carlo\Desktop\Carpeta del Anime\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
 C:\Users\carlo\Desktop\Carpeta del Anime\Calculadora\Calculadora\obj\Debug\Calculadora.Form1.resources
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\bin\Debug\Calculadora.exe.config
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\obj\Debug\Calculadora.csprojAssemblyReference.cache
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\obj\Debug\Calculadora.Form1.resources
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\obj\Debug\Calculadora.Properties.Resources.resources
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\obj\Debug\Calculadora.csproj.GenerateResource.cache
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\obj\Debug\Calculadora.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\obj\Debug\Calculadora.exe
+C:\Users\carlo\Desktop\Carpeta del Anime\Lab 7\laboratorio-07-CarlosAkel\Calculadora\obj\Debug\Calculadora.pdb

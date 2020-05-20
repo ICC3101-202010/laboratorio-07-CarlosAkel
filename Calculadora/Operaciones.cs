@@ -30,6 +30,10 @@ namespace Calculadora
             return histo;
             //MessageBox.Show(histo);
         }
+        public void borrar_histo()
+        {
+            Historial.Clear();
+        }
         public void add_new_ans(string a)
         {
             ans = a;

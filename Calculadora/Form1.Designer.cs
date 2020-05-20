@@ -54,6 +54,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Show_Historial = new System.Windows.Forms.Panel();
             this.Histo = new System.Windows.Forms.Label();
+            this.Borrar_Histo = new System.Windows.Forms.Button();
             this.ButtonsPanel.SuspendLayout();
             this.Show_Historial.SuspendLayout();
             this.SuspendLayout();
@@ -341,6 +342,7 @@
             // 
             // Show_Historial
             // 
+            this.Show_Historial.Controls.Add(this.Borrar_Histo);
             this.Show_Historial.Controls.Add(this.Histo);
             this.Show_Historial.Location = new System.Drawing.Point(15, 9);
             this.Show_Historial.Name = "Show_Historial";
@@ -358,6 +360,17 @@
             this.Histo.Size = new System.Drawing.Size(40, 17);
             this.Histo.TabIndex = 0;
             this.Histo.Text = "Histo";
+            this.Histo.Click += new System.EventHandler(this.Histo_Click);
+            // 
+            // Borrar_Histo
+            // 
+            this.Borrar_Histo.Location = new System.Drawing.Point(222, 402);
+            this.Borrar_Histo.Name = "Borrar_Histo";
+            this.Borrar_Histo.Size = new System.Drawing.Size(130, 26);
+            this.Borrar_Histo.TabIndex = 1;
+            this.Borrar_Histo.Text = "Borrar_Historial";
+            this.Borrar_Histo.UseVisualStyleBackColor = true;
+            this.Borrar_Histo.Click += new System.EventHandler(this.Borrar_Histo_Click);
             // 
             // Form1
             // 
@@ -409,6 +422,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel Show_Historial;
         private System.Windows.Forms.Label Histo;
+        private System.Windows.Forms.Button Borrar_Histo;
     }
 }
 

@@ -53,8 +53,8 @@
             this.Igual = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Show_Historial = new System.Windows.Forms.Panel();
-            this.Histo = new System.Windows.Forms.Label();
             this.Borrar_Histo = new System.Windows.Forms.Button();
+            this.Histo = new System.Windows.Forms.Label();
             this.ButtonsPanel.SuspendLayout();
             this.Show_Historial.SuspendLayout();
             this.SuspendLayout();
@@ -352,16 +352,6 @@
             this.Show_Historial.Click += new System.EventHandler(this.Show_Historial_Click);
             this.Show_Historial.Paint += new System.Windows.Forms.PaintEventHandler(this.Show_Historial_Paint);
             // 
-            // Histo
-            // 
-            this.Histo.AutoSize = true;
-            this.Histo.Location = new System.Drawing.Point(27, 28);
-            this.Histo.Name = "Histo";
-            this.Histo.Size = new System.Drawing.Size(40, 17);
-            this.Histo.TabIndex = 0;
-            this.Histo.Text = "Histo";
-            this.Histo.Click += new System.EventHandler(this.Histo_Click);
-            // 
             // Borrar_Histo
             // 
             this.Borrar_Histo.Location = new System.Drawing.Point(222, 402);
@@ -371,6 +361,16 @@
             this.Borrar_Histo.Text = "Borrar_Historial";
             this.Borrar_Histo.UseVisualStyleBackColor = true;
             this.Borrar_Histo.Click += new System.EventHandler(this.Borrar_Histo_Click);
+            // 
+            // Histo
+            // 
+            this.Histo.AutoSize = true;
+            this.Histo.Location = new System.Drawing.Point(27, 28);
+            this.Histo.Name = "Histo";
+            this.Histo.Size = new System.Drawing.Size(40, 17);
+            this.Histo.TabIndex = 0;
+            this.Histo.Text = "Histo";
+            this.Histo.Click += new System.EventHandler(this.Histo_Click);
             // 
             // Form1
             // 

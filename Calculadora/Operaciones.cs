@@ -36,7 +36,7 @@ namespace Calculadora
         }
         public void add_new_ans(string a)
         {
-            ans = a;
+            ans = a.Replace(',', '.'); ;
         }
         public string show_ans()
         {
@@ -46,7 +46,8 @@ namespace Calculadora
 
         public string operar(string I,string D)
         {
-            double Izquierda = double.Parse(I, System.Globalization.CultureInfo.InvariantCulture);  
+            double Izquierda = double.Parse(I, System.Globalization.CultureInfo.InvariantCulture);
+            //MessageBox.Show(Izquierda.ToString());
             double Derecha = double.Parse(D, System.Globalization.CultureInfo.InvariantCulture);
             double resutl;
             if (Medio == "+")
@@ -56,14 +57,14 @@ namespace Calculadora
                 add_new_ans(resutl.ToString());
                 return resutl.ToString();
             }
-            else if(Medio == "-")
+            else if (Medio == "-")
             {
                 resutl = Izquierda - Derecha;
                 Historial.Add(resutl.ToString());
                 add_new_ans(resutl.ToString());
                 return resutl.ToString();
             }
-            else if(Medio == "/")
+            else if (Medio == "/")
             {
                 try
                 {
@@ -76,9 +77,9 @@ namespace Calculadora
                 {
                     return $"Math Error";
                 }
-                
+
             }
-            else if(Medio == "*")
+            else if (Medio == "*")
             {
                 try
                 {
@@ -93,7 +94,6 @@ namespace Calculadora
                 }
             }
             return $"Nothing";
-
         }
     }
 

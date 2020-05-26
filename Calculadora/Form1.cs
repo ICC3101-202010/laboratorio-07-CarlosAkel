@@ -48,7 +48,7 @@ namespace Calculadora
         {
 
             Calular_Ecuacion();
-            this.UserInput.Text = string.Empty;
+            //this.UserInput.Text = string.Empty;
         }
 
 
@@ -153,9 +153,25 @@ namespace Calculadora
         /// </summary>
         private void Calular_Ecuacion()
         {
-
-            this.Resultado_Calculadora.Text = ParseEc();
+            //this.UserInput.Text = ParseEc();
+            string a = ParseEc();
+            this.Resultado_Calculadora.Text = a;
+            this.UserInput.Text = a.Replace(',', '.');
+            for (int i = 0;i < a.Length; i++)
+            {
+                if(a[i] == ',')
+                {
+                    //a[i] = '.';
+                    //MessageBox.Show(double.Parse(a, System.Globalization.CultureInfo.InvariantCulture).ToString());
+                    //a.Replace(',','.');
+                    //MessageBox.Show(a + " " + a.Replace(',', '.'));
+                    this.UserInput.Refresh();
+                    //this.UserInput.Text = "hola";
+                    //this.UserInput.Text = a.Replace(',', '.');
+                }
+            }
         }
+
         private string ParseEc()
         {
             try
@@ -165,226 +181,42 @@ namespace Calculadora
                 string izq = "";
                 string der = "";
                 string med = "";
-                List<string> medios = new List<string>();
-                List<string> derechas = new List<string>();
-                List<string> newderechas = new List<string>();
 
                 for (int i = 0; i < input.Length; i++)
                 {
-                    var num = "0123456789.";
-                    if(num.Any(c => input[i] == c))
+                    var num = "0123456789.,";
+                    if (num.Any(c => input[i] == c))
                     {
                         if (util)
                         {
-                            izq = add(izq,input[i]);
+                            izq = add(izq, input[i]);
 
                         }
                         else
                         {
-                            der = add(der,input[i]);
-                            
+                            der = add(der, input[i]);
                         }
                     }
                     else
                     {
-
-                        if(util == false) //util == false
+                        if (util == false)
                         {
-                            
-                            if (der == "")
-                            {
-                                throw new InvalidOperationException($"");
-                            }
-                            else
-                            {
-                                //Operaciones op2 = new Operaciones(med);
-                                //izq = op2.operar(izq, der);
-                                derechas.Add(der);
-                                der = "";
-                                med = "";
-                                med = add(med, input[i]);
-                                medios.Add(med);
-
-                            }
-                            
+                            throw new InvalidOperationException($"");
                         }
-                        else
-                        {
-                            med = add(med, input[i]);
-                            medios.Add(med);
-                            util = false;
-                        }
-                        
 
-
+                        med = add(med, input[i]);
+                        util = false;
 
                     }
                 }
-                derechas.Add(der);
-                var bul = true;
-                int piv = 0;
-                if (medios.Count > 1)
-                {
-                    if (medios[0] == "*" || medios[0] == "/")
-                    {
-                        derechas.Insert(0,izq);
-                        bul = false;
-                    }
-
-                    int opo = 1;
-                    var pls = true;
-                    var pls2 = true;
-                    var mirai = true;
-                    for (int i = 0; i < medios.Count; i++)
-                    {
-                        if(medios[i] == "*" || medios[i] == "/")
-                        {
-                            Operaciones op2 = new Operaciones(medios[i]);
-                            //MessageBox.Show(derechas[i].ToString());
-                            //MessageBox.Show(derechas[i+1].ToString());
-                            if(pls == true)
-                            {
-
-                                //MessageBox.Show(derechas.Count.ToString());
-                                //MessageBox.Show(opo.ToString());
-                                //MessageBox.Show(derechas[opo].ToString());
-                                der = op2.operar(derechas[opo], derechas[opo+1]);
-                                pls = false;
-                                
-                            }
-                            else
-                            {
-                                MessageBox.Show(der);
-                                MessageBox.Show(derechas[opo]);
-                                der = op2.operar(derechas[opo], der);
-                                //der = op2.operar(der, derechas[opo]);
-                            }
-                            //MessageBox.Show(der);
-                            newderechas.Add(der);
-                            opo++;
-
-                            //i++;
-                        }
-                        else if(bul == true)
-                        {
-                            //MessageBox.Show(derechas[i]);
-                            try
-                            {
-
-                                if (medios[i + 1] == null || medios[i + 1] == "+" || medios[i + 1] == "-")
-                                {
-                                    //MessageBox.Show(derechas[i]);
-                                    newderechas.Add(derechas[i]);
-                                }
-                            }
-                            catch
-                            {
-                                newderechas.Add(derechas[i]);
-                            }
-
-                            mirai = false;
-                            pls = true;
-                        }
-                        else if(bul == false)
-                        {
-                            //MessageBox.Show(derechas[i+1]);
-                            try
-                            {
-                                if (medios[i + 1] == null || medios[i + 1] == "+" || medios[i + 1] == "-")
-                                {
-                                    //MessageBox.Show(derechas[i]);
-                                    newderechas.Add(derechas[i + 1]);
-                                }
-                            }
-                            catch
-                            {
-                                newderechas.Add(derechas[i + 1]);
-                            }
-
-                            pls = true;
-                        }
-                        
-                    }
-                    if(mirai == false && opo > 1)
-                    {
-                        piv = 0;
-                    }
-                    
-                    var safe = true;
-                    var usafe = true;
-                    string control = "";
-                    if (medios[0] == "*" || medios[0] == "/")
-                    {
-                        izq = newderechas[piv];
-                        for (int j = 0; j < medios.Count; j++)
-                        {
-                            if (medios[j] == "+" || medios[j] == "-" || safe == true)
-                            {
-                                control = medios[j];
-                                medios.RemoveAt(j);
-                                safe = false;
-                                piv++;
-                            }
-                        }
+                Operaciones op = new Operaciones(med);
 
 
-                    }
-                    else
-                    {
-                        //piv++;
-                    }
-                    for (int j = 0; j < medios.Count; j++)
-                    {
 
-                        if (medios[j] == "+" || medios[j] == "-")
-                        {
-                            Operaciones op2 = new Operaciones(medios[j]);
-                           // MessageBox.Show("izq " +izq);
-                            //MessageBox.Show(newderechas[piv]);
-                            if (newderechas.Count > 0)
-                            {
-                                izq = op2.operar(izq, newderechas[piv]);
-                            }
-                            else
-                            {
-                                izq = op2.operar(izq, "0");
-                            }
-                            pls2 = false;
-                            usafe = false;
-                            piv ++;
-                        }
-                        /*else if(usafe == true)
-                        {
-                            izq = der;
-                            //MessageBox.Show(izq);
-                            //MessageBox.Show(newderechas[piv]);
-                            Operaciones op2 = new Operaciones(control);
-                            izq = op2.operar(izq, newderechas[piv]);
-                            usafe = false;
-                            pls2 = false;
-                        }*/
-                    }
-                    if(pls2 == true)
-                    {
-                        izq = der;
-                    }
-                }
-                else
-                {
-
-                    Operaciones op = new Operaciones(med);
-                    izq = op.operar(izq,der);
-
-                }
-
-                
-
-
-                
-                return izq; 
+                return op.operar(izq, der);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return $"Syntax Error {ex.Message}";
             }
@@ -392,7 +224,7 @@ namespace Calculadora
 
         public string add(string numero, char extra)
         {
-            if(extra == '.' && numero.Contains("."))
+            if(extra == '.' && numero.Contains(".") )
             {
                 throw new InvalidOperationException($"");
             }
